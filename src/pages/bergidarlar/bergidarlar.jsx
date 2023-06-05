@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './bergidarlar.scss';
-import DataTable from "../../component/dataTable/dataTable";
 import { SearchOutlined } from '@mui/icons-material';
-import { baza } from '../../data.js'
+import { GetMustpay } from "../../api/Queries/get";
+import MustpayTable from "../../component/dataTable/mustpayData/mustpay";
 
 const Bergidarlar = () => {
     const [isActiveModal, setIsActiveModal] = useState(false);
-    const [b] = useState([...baza]);
+    const [mustpay, setMustpay] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await GetMustpay()
+            console.log(res);
+            setMustpay(res)
+        }
+        fetchData()
+    }, [])
+
     return (
         <div className="brgMain">
             <div className="brgMainContainer">
@@ -17,7 +27,7 @@ const Bergidarlar = () => {
                             <input type="search" name="Search" placeholder="Gözle..." required />
                             <button type="submit" className="btn-default" aria-label="Left Align">
                                 <SearchOutlined className="searchIcon" />
-                                Gozle
+                                Gözle
                             </button>
                         </div>
                     </div>
@@ -37,7 +47,7 @@ const Bergidarlar = () => {
                     </div>
                 </div>
                 <div className="dataTable">
-                    <DataTable data={b} rowsPerPage={8} />
+                    <MustpayTable data={mustpay.results ?? []} rowsPerPage={10} />
                 </div>
             </div>
         </div>

@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import './arhiw.scss';
-import DataTable from '../../component/dataTable/dataTable'
 import { SearchOutlined } from '@mui/icons-material';
-import {baza} from '../../data.js'
+// import ArchiveTable from "../../component/dataTable/arhiwData/arhiw";
 
 
 const Arhiw = () => {
     const [isActiveModal, setIsActiveModal] = useState(false);
-    const [b] = useState([...baza]);
-
     return (
         <div className="arhiw">
-            <div className="arhiwContainer">
-                <h2>Ýyllar boýunça arhiw</h2>
+            <div className="arhiwContainer" >
+                <h2></h2>
                 <div className="topSearch">
                     <div className="header-search">
                         <div className="form">
@@ -53,7 +50,7 @@ const Arhiw = () => {
                             2023 ýyl
                         </div>
                     </div>
-                      <DataTable  data={b} rowsPerPage={8} />
+                      {/* <ArchiveTable  data={b} rowsPerPage={8} /> */}
                 </div>
             </div>
         </div>

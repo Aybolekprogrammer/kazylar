@@ -28,7 +28,7 @@ const Navbar = () => {
       },
       {
          id: 4,
-         main: 'Borçlylar',
+         main: 'Wagtynda tölemedikler',
          link: '/borchlylar',
          active: 'borch'
       },
@@ -61,7 +61,7 @@ const Navbar = () => {
                   <div className="logo">
                      <img src={logo} alt="logo" />
                   </div>
-                  <p>Türkmenistanyň ýokary kazyýeti</p>
+                  <p>Türkmenistanyň Ýokary Kazyýeti</p>
                </div>
 
                <div className="right">

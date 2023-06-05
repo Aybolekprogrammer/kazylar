@@ -21,15 +21,14 @@ const Login = () => {
         });
     }
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(data);
-        
+        console.log(data);        
         try {
             const res = await axios.post("http://127.0.0.1:8000/api/login", data);
             let token = res.data.token;
-            console.log(token);
+            localStorage.setItem('token', token)
+            // console.log(token);
             navigate('/home');
         } catch (err) {
             console.log(err);

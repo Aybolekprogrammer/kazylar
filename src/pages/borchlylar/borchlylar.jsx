@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './borchlylar.scss';
 import { SearchOutlined } from '@mui/icons-material';
-import DataTable from "../../component/dataTable/dataTable";
-import {baza} from '../../data.js'
-
-
+import { Getinsolvents } from "../../api/Queries/get.js";
+import InsolventsTable from "../../component/dataTable/insolventsData/insolvents";
 
 const Borchlylar = () => {
     const [isActiveModal, setIsActiveModal] = useState(false);
-    const [b] = useState([...baza]);
+    const [insolvents, setInsolvents] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await Getinsolvents()
+            console.log(res);
+            setInsolvents(res)
+        }
+        fetchData()
+    }, [])
+
     return (
         <div className="borchMain">
             <div className="borchMainContainer">
@@ -39,7 +47,7 @@ const Borchlylar = () => {
                     </div>
                 </div>
                 <div className="dataTable">
-                  <DataTable  data={b} rowsPerPage={8} />
+                  <InsolventsTable  data={insolvents ?? []} rowsPerPage={8} />
                 </div>
             </div>
         </div>

@@ -1,15 +1,7 @@
-import React from "react";
-import "./modal.scss";
-import person from '../../images/login.png';
-
-const modalData = [{
-    name: 'Aman Amanow ',
-    wife: 'Maral Muhammedowa',
-    phone: '+99362362075',
-    law: 'Köpetdag etrap kazyýeti',
-    executor: 'Berkararlyk etrap kazyýeti',
-    pdf: 'Giňişleýin'
-}]
+import React, {useEffect, useState} from "react";
+import "../modal.scss";
+import person from '../../../images/login.png';
+import { Get } from "../../../api/services/api_helpers";
 
 const child = [
     { id: 1, name: "Jeren Amanowa", pdf: "Giňişleýin" },
@@ -17,13 +9,23 @@ const child = [
     { id: 3, name: "Jemal Amanowa", pdf: "Giňişleýin" },
 ]
 
-const Modal = ({ activeModal, setActiveModal }) => {
+const MustpayModal = ({ activeModal, setActiveModal, id }) => {
+    const [modal, setmodal] = useState([])
+    useEffect(() => {
+        const fetchData = async () => {
+            Get(`mustpayconfigbyid/${id}`)
+            .then(function(res) {
+                setmodal(res)
+            } )     
+        }         
+        fetchData()
+    }, [id])
+
     return (
         <div className="modall">
             <div className={activeModal ? "modalOut active" : "modalOut"} onClick={() => setActiveModal(false)}>
                 <div className="blur"></div>
                 <div className="modalBox" onClick={e => e.stopPropagation()}>
-                    {modalData.map((m, id) => (
                         <div className="modalContainer" key={id}>
                             <div className="top">
                                 <h3>Bergidar barada umumy maglumat</h3>
@@ -32,19 +34,19 @@ const Modal = ({ activeModal, setActiveModal }) => {
                             <div className="flexBoxs">
                                 <div className="flexBox">
                                     <div className="head">Ady:</div>
-                                    <div className="text">{m.name}</div>
+                                    <div className="text">{modal.name_and_lastname}</div>
                                     <div className="right">
-                                        <button><a href={require("../../images/file.pdf")}>{m.pdf}</a></button>
+                                        <button><a href={require("../../../images/file.pdf")}>pdf</a></button>
                                     </div>
                                 </div>
-                                <div className="flexBox">
+                                {/* <div className="flexBox">
                                     <div className="head">Aýalynyň ady:</div>
                                     <div className="text">{m.wife}</div>
                                     <div className="right">
                                         <button><a href={require("../../images/file.pdf")}>{m.pdf}</a></button>
                                     </div>
-                                </div>
-                                <div className="flexBox2">
+                                </div> */}
+                                {/* <div className="flexBox2">
                                     <div className="leftHead">Çagalary:</div>
                                     <div className="rightName">
                                     {child.map((c) => (
@@ -58,28 +60,33 @@ const Modal = ({ activeModal, setActiveModal }) => {
                                         </div>
                                     ))}
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="flexBox">
                                     <div className="head">Telefon nomeri:</div>
-                                    <div className="text">{m.phone}</div>
+                                    <div className="text">{modal.phone_number}</div>
                                     <div className="right">
                                     </div>
                                 </div>
                                 <div className="flexBox">
-                                    <div className="head">Karary çykaran:</div>
-                                    <div className="text">{m.law}</div>
+                                    <div className="head">Öý salgysy:</div>
+                                    <div className="text">{modal.address}</div>
                                     <div className="right">
                                     </div>
                                 </div>
                                 <div className="flexBox">
-                                    <div className="head">Ýerine ýetiriji:</div>
-                                    <div className="text">{m.executor}</div>
+                                    <div className="head">Doglan senesi:</div>
+                                    <div className="text">{modal.birthday}</div>
+                                    <div className="right">
+                                    </div>
+                                </div>
+                                <div className="flexBox">
+                                    <div className="head">Işleýän ýeri:</div>
+                                    <div className="text">{modal.job_status}</div>
                                     <div className="right">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    ))}
                     <div className="out" onClick={() => setActiveModal(!activeModal)}>Chykmak</div>
                 </div>
             </div>
@@ -87,5 +94,5 @@ const Modal = ({ activeModal, setActiveModal }) => {
     )
 }
 
-export default Modal;
+export default MustpayModal;
 

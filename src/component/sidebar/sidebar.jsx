@@ -21,7 +21,6 @@ const Sidebar = ({ isActiveSidebar, setIsActiveSidabar }) => {
 
     const navigate = useNavigate()
     const { placeSearch, setPlaceSearch } = useContext(Context)
-    const [loading, setLoading] = useState(false)
 
     const SearchClick = async (place) => {
         try {
@@ -30,20 +29,20 @@ const Sidebar = ({ isActiveSidebar, setIsActiveSidabar }) => {
                 setPlaceSearch(res)
             })
             navigate('/byplace')
-        } catch (error) {setLoading(false)
+        } catch (error) {
+            console.log(error);
         }
     }
-
     const Click = (place) => {
         SearchClick(place)
     }
 
     return (
         <div className={isActiveSidebar ? 'sidebar active' : 'sidebar'} onClick={() => setIsActiveSidabar(false)}>
-            {places.map((pl) => (
-                <div className="sidebarLeftOpen" onClick={e => e.stopPropagation()}>
+            {places.map((pl, id) => (
+                <div className="sidebarLeftOpen" onClick={e => e.stopPropagation()} key={id}>
                     <div className="flexText" onClick={handleClick}>
-                        <p>Asgabat saheri</p>
+                        <p>Aşgabat şäheri</p>
                         <ArrowRight />
                         <>
                             {activeSubsidebar && (
@@ -58,7 +57,7 @@ const Sidebar = ({ isActiveSidebar, setIsActiveSidabar }) => {
                         </>
                     </div>
                     <div className="flexText" onClick={handleClick2}>
-                        <p>Ahal welayaty</p>
+                        <p>Ahal welaýaty</p>
                         <ArrowRight />
                         {activeSubsidebar2 && (
                             <div className="subSidebar">

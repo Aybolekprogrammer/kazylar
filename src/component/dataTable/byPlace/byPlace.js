@@ -24,7 +24,7 @@ const Byplace = ({data, rowsPerPage}) => {
         <tbody>
           {slice.map((el, id) => (
             <tr className='tableRowItems' key={el.id}>
-              <td className='tableCell'>{id}</td>
+              <td className='tableCell'>{id+1}</td>
                 <td 
                   className='tableCell'
                   style={{cursor: 'pointer'}}

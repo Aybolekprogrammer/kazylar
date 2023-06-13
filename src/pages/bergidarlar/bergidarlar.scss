@@ -1,12 +1,13 @@
-.brgMain{
+.brgMain {
     width: 100%;
 
-    .brgMainContainer{
+    .brgMainContainer {
         margin: 0 60px;
 
-        h2{
+        h2 {
             // color: rgb(122, 122, 236);
         }
+
         .topSearch {
             display: flex;
             justify-content: space-between;
@@ -75,7 +76,7 @@
                         box-shadow: 0 0 5px rgba(0, 0, 0, .2);
                         padding: 7px 50px;
                         background-color: #fff;
-                        color: blue;
+                        color: #155e75;
                         transition: 3s;
                         cursor: pointer;
                     }
@@ -86,23 +87,121 @@
                         background-color: white;
                         box-shadow: 1px 4px 5px rgba(0, 0, 0, .2);
                         border: 0.5px solid lightgray;
-                        width: 100%;
+                        width: 130%;
+                        padding: 10px;
+                        transition: .5s all;
+                        right: 0;
+                        border-radius: 8px 0px 8px 8px;
 
-                        li {
+                        .list {
                             list-style-type: none;
-                            margin: 10px 5px;
+                            margin: 10px 8px;
                             border-bottom: 0.5px solid lightgray;
                             cursor: pointer;
+                            transition: .5s all;
+
+                            .form-group {
+                                display: flex;
+                                margin: 8px 0px;
+                                border: 0.5px solid rgb(232, 232, 232);
+
+                                input {
+                                    width: 84%;
+                                    outline: none;
+                                    border: none;
+                                    padding: 0 0 0 4px;
+                                }
+
+                                .serachIconForFilter {
+                                    width: 16%;
+                                    color: #fff;
+                                    background-color: lightgray;
+                                }
+                            }
+
+                            input {
+                                width: 100%;
+                                outline: none;
+                                border: none;
+                                margin: 8px 4px 0px 0px;
+                            }
+
+                            input[type=date]::before {
+                                content: attr(placeholder);
+                                position: absolute;
+                                color: #999999;
+                            }
+
+                            input[type=date] {
+                                color: #ffffff;
+                            }
+
+                            input[type=date]:focus,
+                            input[type=date]:valid {
+                                color: #666666;
+                            }
+
+                            input[type=date]:focus::before,
+                            input[type=date]:valid::before {
+                                content: "";
+                            }
                         }
 
-                        li:hover,
-                        li:focus {
-                            color: blue;
+                        .clearButton {
+                            margin: 16px 8px 8px 8px;
+                            text-align: center;
+
+                            button {
+                                margin: auto;
+                                border: none;
+                                padding: 4px 16px;
+                                background-color: #185adb;
+                                color: #fff;
+                                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                cursor: pointer;
+                                box-shadow: 0px 15px 20px rgba(150, 151, 171, 0.4);
+                            }
+
+                            button:hover {
+                                box-shadow: 0px 8px 15px rgba(46, 46, 46, 0.333);
+                            }
                         }
                     }
-
-                    .filterList.active {}
                 }
+            }
+        }
+
+        .loaderOut {
+            width: max-content;
+            margin: auto;
+            margin-top: 10%;
+
+            .productsLoading {
+                width: 70px;
+                height: 70px;
+                border: 5px solid aqua;
+                border-bottom-color: #FFF;
+                border-radius: 50%;
+                display: inline-block;
+                box-sizing: border-box;
+                animation: rotation 1s linear infinite;
+            }
+
+            @keyframes rotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+        }
+
+        .dataTable{
+            .productNotFound{
+                color: gray;
             }
         }
     }

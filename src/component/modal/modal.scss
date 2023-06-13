@@ -29,6 +29,7 @@
 
             .modalContainer {
                 margin-bottom: 40px;
+
                 .top {
                     display: flex;
                     justify-content: space-between;
@@ -63,18 +64,15 @@
                             flex: 3;
                         }
 
-                        .right {      
-                            flex: 1;                     
+                        .right {
+                            flex: 1;
 
-                            button{
+                            button {
                                 cursor: pointer;
-                                border:0.5px solid lightgray;
+                                border: 0.5px solid lightgray;
                                 padding: 4px 8px;
-                                
-                                a{
-                                    text-decoration: none;
-                                    color: #114b5c;
-                                }
+                                text-decoration: none;
+                                color: #114b5c;
                             }
                         }
                     }
@@ -82,7 +80,7 @@
                     .flexBox2 {
                         display: flex;
                         justify-content: space-between;
-                       
+
 
                         .leftHead {
                             flex: 1;
@@ -95,7 +93,7 @@
 
                             .child {
                                 display: flex;
-                                justify-content: space-between;                               
+                                justify-content: space-between;
                                 padding: 5px 0px;
 
                                 .text2 {}
@@ -103,15 +101,12 @@
                                 .right2 {
                                     padding-right: 2px;
 
-                                    button{
+                                    button {
                                         cursor: pointer;
                                         border: 0.5px solid lightgray;
                                         padding: 4px 8px;
-
-                                        a{
-                                            text-decoration: none;
-                                            color: #114b5c;
-                                        }
+                                        text-decoration: none;
+                                        color: #114b5c;
                                     }
                                 }
                             }
@@ -133,7 +128,7 @@
                 cursor: pointer;
             }
 
-            .out:hover{
+            .out:hover {
                 box-shadow: 2px 4px 5px 1px rgba(130, 128, 128, 0.58);
                 color: #5d5d5d;
             }
@@ -145,6 +140,4 @@
     }
 }
 
-@media(max-width: 1250px) {
-
-}
+@media(max-width: 1250px) {}

@@ -29,17 +29,38 @@
 
 .tableRowItems {
   cursor: auto;
+  position: relative;
 
   .tableCell {
     padding: 12px;
     font-size: 14px;
     color: grey;
   }
+
+  .tableCell.bellik{
+     width: 12%;
+     cursor: pointer;
+
+     .hoveredText{
+        position: absolute;
+        display: none;
+     }
+  }
+  .tableCell.bellik:hover{
+    .hoveredText{
+       display: block;
+       background-color: #fff;
+       width: 16%;
+       right: 0;
+       z-index: 16;
+       padding: 10px;
+       border-radius: 8px;
+       box-shadow: 0 0 5px rgba(2, 0, 0, .2);
+    }
+  }
 }
 
 .tableRowItems:nth-child(odd) {
   background-color: #f9f9f9;
 }
-
-
 }

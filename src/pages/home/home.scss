@@ -92,7 +92,7 @@
 
                         .list {
                             list-style-type: none;
-                            margin: 10px 5px;
+                            margin: 10px 8px;
                             border-bottom: 0.5px solid lightgray;
                             cursor: pointer;
                             transition: .5s all;
@@ -101,10 +101,9 @@
                                 display: flex;
                                 justify-content: space-between;
                                 align-items: center;
-                                margin-bottom: 3px;
 
-                                p {
-                                    font-family: Arial, Helvetica, sans-serif;
+                                .searchMainName {
+                                    margin-bottom: 4px;
                                     cursor: pointer;
                                 }
                             }
@@ -116,7 +115,7 @@
                                 padding: 5px 0px;
                                 transition: .5s all;
 
-                                li {
+                               .listContent {
                                     list-style: none;
                                     padding: 4px 0px 0px 4px;
                                     cursor: pointer;
@@ -133,12 +132,16 @@
                                         .listPlaceName {
                                             display: flex;
                                             justify-content: space-between;
+                                            padding: 0px 4px;
+                                            border-bottom: 0.5 px solid lightgray;
                                         }
 
                                         .li {
                                             cursor: pointer;
                                             display: none;
                                             width: 100%;
+                                            margin-left: 8px;
+                                            font-family: 'Times New Roman', Times, serif;
                                         }
 
                                         .li:hover {
@@ -146,18 +149,124 @@
                                         }
                                     }
 
-                                    .listName:hover li {
+                                    .listName:hover .li {
                                         display: block;
                                         transition: .10s all;
                                     }
                                 }
+
+                                .rulingLists {
+                                    padding: 4px 0px 0px 4px;
+
+                                    .rulingList {
+                                        padding: 4px 0px 0px 0px;
+                                        font-size: 14px;
+                                        cursor: pointer;
+                                        color: rgb(75, 123, 155);
+                                        transition: .5s all;
+                                    }
+                                }
+                            }
+
+                            input {
+                                width: 100%;
+                                outline: none;
+                                border: none;
+                                margin: 8px 4px 0px 0px;
+                            }
+
+                            input[type=date]::before {
+                                content: attr(placeholder);
+                                position: absolute;
+                                color: #999999;
+                            }
+
+                            input[type=date] {
+                                color: #ffffff;
+                            }
+
+                            input[type=date]:focus,
+                            input[type=date]:valid {
+                                color: #666666;
+                            }
+
+                            input[type=date]:focus::before,
+                            input[type=date]:valid::before {
+                                content: "";
+                            }
+
+                            .form-group{
+                                display: flex;
+                                margin: 8px 0px;
+                                border: 0.5px solid rgb(232, 232, 232);
+
+                                input{
+                                    width: 84%;
+                                    outline: none;
+                                    border: none;
+                                    padding: 0 0 0 4px;
+                                }
+
+                                .serachIconForFilter{
+                                    width: 16%;
+                                    color: #fff;
+                                    background-color: lightgray;
+                                }
                             }
                         }
 
-                    }
+                        .clearButton{
+                            margin: 16px 8px 8px 8px;
+                            text-align: center;
+                        
+                            button{
+                                margin: auto;
+                                border: none;
+                                padding: 4px 16px;
+                                background-color: #185adb;
+                                color: #fff;
+                                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                                cursor: pointer;
+                                box-shadow: 0px 15px 20px rgba(150, 151, 171, 0.4);
+                            }
 
-                    .filterList.active {}
+                            button:hover{
+                                box-shadow: 0px 8px 15px rgba(46, 46, 46, 0.333);
+                            }
+                        }
+                    }
                 }
+            }
+        }
+        .loaderOut {
+            width: max-content;
+            margin: auto;
+            margin-top: 10%;
+
+            .productsLoading {
+               width: 70px;
+               height: 70px;
+               border: 5px solid aqua;
+               border-bottom-color: #FFF;
+               border-radius: 50%;
+               display: inline-block;
+               box-sizing: border-box;
+               animation: rotation 1s linear infinite;
+            }
+
+            @keyframes rotation {
+               0% {
+                  transform: rotate(0deg);
+               }
+
+               100% {
+                  transform: rotate(360deg);
+               }
+            }
+         }
+         .dataTableContainer{
+            .productNotFound{
+                color: gray;
             }
         }
     }

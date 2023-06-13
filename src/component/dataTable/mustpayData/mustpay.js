@@ -25,8 +25,8 @@ const MustpayTable = ({ data, rowsPerPage }) => {
                 </thead>
                 <tbody>
                     {slice.map((el,id) => (
-                        <tr className='tableRowItems' key={id}>
-                            <td className='tableCell'>{id}</td>
+                        <tr className='tableRowItems' key={el.id}>
+                            <td className='tableCell'>{id+1}</td>
                             <td
                                 className='tableCell'
                                 style={{ cursor: 'pointer' }}
@@ -44,7 +44,7 @@ const MustpayTable = ({ data, rowsPerPage }) => {
                 </tbody>
             </table>
             <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
-            <MustpayModal  activeModal={mustpayModal} setActiveModal={setMustpayModal} id='1'/>
+            {/* <MustpayModal  activeModal={mustpayModal} setActiveModal={setMustpayModal} id='3'/> */}
         </>
     );
 };

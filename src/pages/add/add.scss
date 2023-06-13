@@ -1,99 +1,226 @@
-.add{
+.add {
     width: 100%;
 
-    .addContainer{
+    .addContainer {
         margin: 0 60px;
 
-        h2{
+        h2 {
             // color: rgb(122, 122, 236);
         }
+        .form {
+            display: flex;
+            justify-content: space-between;
 
-        .addList{
+            .left {
+                display: flex;
+                flex-direction: column;    
+                width: 35%;           
 
-            .addFlexBox{
-               display: flex;
-               justify-content: space-between;
+                .inputs{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0px 0px 16px 0px;
+                    gap: 10px;
 
-               .left{
-                   display: flex;
-                   flex-direction: column;
-                   width: 60%;
+                    label{                       
+                        width: 30%;
+                        text-align: center;
+                        background-color: #bbdae355;
+                        padding: 4px;
+                        box-shadow: 2px 1px 3px 1px rgb(171, 169, 169);
+                        width: 45%;
+                    }
 
-                   .inputs{
-                     padding: 0px 0px 15px 0px;
-                     display: flex;
-                     justify-content: space-between;
-                     
-                     input{
-                        padding: 3px;
+                    input{
                         width: 65%;
                         outline: none;
                         border: 0.5px solid rgb(172, 172, 244);
                         box-shadow: 3px 1px 5px 0px rgb(171, 169, 169);
-                     }
-                     input:focus{
-                        border: 1px solid rgb(118, 187, 255);
-                       }
-                     label{
-                        height: max-content;
-                        width: 20%;
+                    }
+                }
+            }
+
+            .center{
+                width: 35%; 
+                display: flex;
+                flex-direction: column;               
+
+                .inputs{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0px 0px 16px 0px;
+                    gap: 10px;
+
+                    label{                       
+                        width: 30%;
                         text-align: center;
                         background-color: #bbdae355;
-                        padding: 5px 10px;
+                        padding: 4px;
                         box-shadow: 2px 1px 3px 1px rgb(171, 169, 169);
-                     }
-                   }
+                        width: 45%;
+                    }
 
-               }
-
-               .logoBottom{
-                   height: 300px;
-                   width: 300px;  
-                   margin-right: 5%; 
-                
-                  img{
-                    height: 100%;
-                    width: 100%;   
-                  }
-               }
-            
+                    input{
+                        width: 65%;
+                        outline: none;
+                        border: 0.5px solid rgb(172, 172, 244);
+                        box-shadow: 3px 1px 5px 0px rgb(171, 169, 169);
+                    }
+                }
             }
-            .bottomTextArea{
+
+            .right {
+                width: 20%;
                 display: flex;
-                justify-content: space-between;
-                label{
-                    height: max-content;
-                    width: 12%;
-                    text-align: center;
-                    background-color: #bbdae355;
-                    padding: 10px 10px;
-                    box-shadow: 2px 1px 3px 1px rgb(171, 169, 169);
-                }
-                textarea{
-                    outline: none;
-                    padding: 5px 3px;
-                    width: 79%;
-                    border: 0.5px solid rgb(172, 172, 244); 
-                    box-shadow: 3px 1px 5px 0px rgb(171, 169, 169);  
+                flex-direction: column;        
+
+                .logo {
+                    width: 90%;
+                    height: 60%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
 
+                .text{
+                    display: flex;
+                    flex-direction: column;
+                    height: 37%;
+
+                    label{
+                        padding: 4px 0px; 
+                    }
+
+                    textarea{
+                        outline: none;
+                        padding: 5px 3px;
+                        height: 100%;
+                        border: 0.5px solid rgb(172, 172, 244); 
+                        box-shadow: 3px 1px 5px 0px rgb(171, 169, 169); 
+                    }
+                }
             }
+        }
+        .addButton{
+            margin-top: 20px;
 
-            .addButton{
-                margin-top: 20px;
-
-                p{
-                    float: right; 
-                    background-color: #2563eb;
-                    color: #fff;
-                    padding: 5px 10px;
-                    box-shadow: 3px 1px 3px 1px rgb(171, 169, 169);
-                    cursor: pointer;
-                }
-                p:hover{
-                    box-shadow: 1px 2px 5px 4px rgb(171, 169, 169);
-                }
+            button{
+                float: right; 
+                background-color: #2563eb;
+                border: none;
+                outline: none;
+                color: #fff;
+                padding: 8px 24px;
+                box-shadow: 3px 1px 3px 1px rgb(171, 169, 169);
+                cursor: pointer;
+            }
+            button:hover{
+                box-shadow: 1px 2px 5px 4px rgb(171, 169, 169);
             }
         }
     }
 }
+
+
+
+// .add{
+//     width: 100%;
+
+//     .addContainer{
+//         margin: 0 60px;
+
+//         h2{
+//             // color: rgb(122, 122, 236);
+//         }
+
+//         .addList{
+
+//             .addFlexBox{
+//                display: flex;
+//                justify-content: space-between;
+
+//                .left{
+//                    display: flex;
+//                    flex-direction: column;
+//                    width: 60%;
+
+//                    .inputs{
+//                      padding: 0px 0px 15px 0px;
+//                      display: flex;
+//                      justify-content: space-between;
+                     
+//                      input{
+//                         padding: 3px;
+//                         width: 65%;
+//                         outline: none;
+//                         border: 0.5px solid rgb(172, 172, 244);
+//                         box-shadow: 3px 1px 5px 0px rgb(171, 169, 169);
+//                      }
+//                      input:focus{
+//                         border: 1px solid rgb(118, 187, 255);
+//                        }
+//                      label{
+//                         height: max-content;
+//                         width: 20%;
+//                         text-align: center;
+//                         background-color: #bbdae355;
+//                         padding: 5px 10px;
+//                         box-shadow: 2px 1px 3px 1px rgb(171, 169, 169);
+//                      }
+//                    }
+
+//                }
+
+//                .logoBottom{
+//                    height: 300px;
+//                    width: 300px;  
+//                    margin-right: 5%; 
+                
+//                   img{
+//                     height: 100%;
+//                     width: 100%;   
+//                   }
+//                }
+            
+//             }
+//             .bottomTextArea{
+//                 display: flex;
+//                 justify-content: space-between;
+//                 label{
+//                     height: max-content;
+//                     width: 12%;
+//                     text-align: center;
+//                     background-color: #bbdae355;
+//                     padding: 10px 10px;
+//                     box-shadow: 2px 1px 3px 1px rgb(171, 169, 169);
+//                 }
+//                 textarea{
+//                     outline: none;
+//                     padding: 5px 3px;
+//                     width: 79%;
+//                     border: 0.5px solid rgb(172, 172, 244); 
+//                     box-shadow: 3px 1px 5px 0px rgb(171, 169, 169);  
+//                 }
+
+//             }
+
+//             .addButton{
+//                 margin-top: 20px;
+
+//                 p{
+//                     float: right; 
+//                     background-color: #2563eb;
+//                     color: #fff;
+//                     padding: 5px 10px;
+//                     box-shadow: 3px 1px 3px 1px rgb(171, 169, 169);
+//                     cursor: pointer;
+//                 }
+//                 p:hover{
+//                     box-shadow: 1px 2px 5px 4px rgb(171, 169, 169);
+//                 }
+//             }
+//         }
+//     }
+// }

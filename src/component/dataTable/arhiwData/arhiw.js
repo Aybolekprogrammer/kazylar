@@ -19,9 +19,9 @@
 //           </tr>
 //         </thead>
 //         <tbody>
-//           {slice.map((el) => (
+//           {slice.map((el, id) => (
 //             <tr className='tableRowItems' key={el.id}>
-//               <td className='tableCell'>{el.id}</td>
+//               <td className='tableCell'>{id+1}</td>
 //               <td 
 //                   className='tableCell'
 //                   style={{cursor: 'pointer'}}

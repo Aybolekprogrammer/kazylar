@@ -11,8 +11,3 @@ export const GetMustpay = () => {
 export const Getinsolvents = () => {
     return Get('getinsolvents')
 }
-
-
-export const Mustpayconfigbyid = () => {
-    return Get('mustpayconfigbyid')
-}

@@ -18,31 +18,6 @@ const ByPlace = () => {
             ) : (
                 <div className="placeContainer">
                     <h2>Ýeri boýunça gözleg</h2>
-                    <div className="topSearch">
-                        <div className="header-search">
-                            <div className="form">
-                                <input type="search" name="Search" placeholder="Gözle..." required />
-                                <button type="submit" className="btn-default" aria-label="Left Align">
-                                    <SearchOutlined className="searchIcon" />
-                                    Gozle
-                                </button>
-                            </div>
-                        </div>
-                        <div className="dataFilter">
-                            <div className="filterBox">
-                                <div className="filterTop" onClick={() => setIsActiveModal(!isActiveModal)}>
-                                    Filterle
-                                </div>
-                                {isActiveModal &&
-                                    <div className="filterList">
-                                        <li>Birinji</li>
-                                        <li>Ikinji</li>
-                                        <li>Uchunji</li>
-                                    </div>
-                                }
-                            </div>
-                        </div>
-                    </div>
                     <div className="dataTableContainer">
                         <Byplace data={placeSearch ?? []} rowsPerPage={10} />
                     </div>

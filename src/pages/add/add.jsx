@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './add.scss';
-import logoBottom from '../../images/logo.PNG';
+import logoBottom from '../../images/logo.png';
 import { DriveFolderUploadOutlined } from "@mui/icons-material";
 
 

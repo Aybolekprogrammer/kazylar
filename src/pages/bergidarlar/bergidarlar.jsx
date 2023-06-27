@@ -62,9 +62,9 @@ const Bergidarlar = () => {
                     </div>
                     <div className="dataFilter">
                         <div className="filterBox">
-                            <div className="filterTop" onClick={() => setIsActiveModal(!isActiveModal)}>
+                            {/* <div className="filterTop" onClick={() => setIsActiveModal(!isActiveModal)}>
                                 Filterle
-                            </div>
+                            </div> */}
                             {isActiveModal &&
                                 <div className="filterList">
                                     <div className="list">

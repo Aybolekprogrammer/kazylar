@@ -13,12 +13,11 @@ const InsolventsTable = ({ data, rowsPerPage}) => {
         <thead className='tableRowHeader'>
           <tr>
             <th className='tableHeader'>T/b</th>
-            <th className='tableHeader'>Bergidaryň ady/familaýasy</th>
+            <th className='tableHeader'>Kazynyň ady/familaýasy</th>
             <th className='tableHeader'>Doglan senesi</th>
-            <th className='tableHeader'>Telefon nomeri</th>
-            <th className='tableHeader'>Ýaşaýan ýeri</th>
-            <th className='tableHeader'>Karary çykaran</th>
-            <th className='tableHeader'>Bölüm</th>
+            <th className='tableHeader'>Wezipesi</th>
+            <th className='tableHeader'>Perman</th>
+            <th className='tableHeader'>Hünär derejesi</th>
           </tr>
         </thead>
         <tbody>

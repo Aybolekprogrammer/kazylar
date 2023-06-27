@@ -15,7 +15,7 @@ const MustpayTable = ({ data, rowsPerPage }) => {
                 <thead className='tableRowHeader'>
                     <tr>
                         <th className='tableHeader'>T/b</th>
-                        <th className='tableHeader'>Bergidaryň ady/familaýasy</th>
+                        <th className='tableHeader'>Kazynyň ady/familaýasy</th>
                         <th className='tableHeader'>Doglan senesi</th>
                         <th className='tableHeader'>Telefon belgisi</th>
                         <th className='tableHeader'>Öý salgysy</th>

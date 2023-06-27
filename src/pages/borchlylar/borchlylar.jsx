@@ -24,7 +24,7 @@ const Borchlylar = () => {
     return (
         <div className="borchMain">
             <div className="borchMainContainer">
-                <h2>Ähli borçly bergidarlaryň sanawy</h2>
+                <h2>Ähli kazylaryň sanawy</h2>
                 <div className="topSearch">
                     <div className="header-search">
                         <div className="form">
@@ -37,9 +37,9 @@ const Borchlylar = () => {
                     </div>
                     <div className="dataFilter">
                         <div className="filterBox">
-                            <div className="filterTop" onClick={() => setIsActiveModal(!isActiveModal)}>
+                            {/* <div className="filterTop" onClick={() => setIsActiveModal(!isActiveModal)}>
                                 Filterle
-                            </div>
+                            </div> */}
                             {isActiveModal &&
                                 <div className="filterList">
                                     <div className='list'>

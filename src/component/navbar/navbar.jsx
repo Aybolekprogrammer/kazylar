@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './navbar.scss';
-import logo from '../../images/logo.PNG';
+import logo from '../../images/logo.png';
 import { Link } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import Sidebar from "../sidebar/sidebar";
@@ -8,42 +8,48 @@ import Sidebar from "../sidebar/sidebar";
 
 const Navbar = () => {
    const categories = [
-      {
-         id: 1,
-         main: 'Kategoriýalar',
-         onClick: 'category',
-         active: 'category',
-      },
-      {
-         id: 2,
-         main: 'Baş sahypa',
-         link: '/home',
-         active: 'main'
-      },
-      {
-         id: 3,
-         main: 'Täze döretmek',
-         link: '/add',
-         active: 'add'
-      },
+      // {
+      //    id: 1,
+      //    main: 'Kategoriýalar',
+      //    onClick: 'category',
+      //    active: 'category',
+      // },
+      // {
+      //    id: 2,
+      //    main: 'Baş sahypa',
+      //    link: '/home',
+      //    active: 'main'
+      // },
+      // {
+      //    id: 3,
+      //    main: 'Täze döretmek',
+      //    link: '/add',
+      //    active: 'add'
+      // },
       {
          id: 4,
-         main: 'Wagtynda tölemedikler',
+         main: 'Umumy kazylar',
          link: '/borchlylar',
          active: 'borch'
       },
+      // {
+      //    id: 5,
+      //    main: 'Teklip berilýän kazylar',
+      //    link: '/bergidarlar',
+      //    active: 'bergidar'
+      // },
       {
          id: 5,
-         main: 'Bergidarlar',
-         link: '/bergidarlar',
-         active: 'bergidar'
-      },
-      {
-         id: 6,
-         main: 'Arhiw',
-         link: '/arhiw',
-         active: 'arhiw'
-      },
+         main: 'Teklip berilýän kazylar',
+         link: '/borchlylar',
+         active: 'borch'
+      }
+      // {
+      //    id: 6,
+      //    main: 'Arhiw',
+      //    link: '/arhiw',
+      //    active: 'arhiw'
+      // },
    ]
 
    const currentDateTime = new Date().toLocaleString();
